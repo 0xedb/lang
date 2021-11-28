@@ -15,6 +15,12 @@ x + y;
 let result = add(five, ten);
 !-/*5;
 5 < 10 > 5;
+
+if (5 < 10) {
+return true;
+} else {
+return false;
+}
 `
 
 	tests := []struct {
@@ -35,7 +41,6 @@ let result = add(five, ten);
 		{token.IDENT, "add"},
 		{token.ASSIGN, "="},
 		{token.FUNCTION, "fn"},
-
 		{token.LPAREN, "("},
 		{token.IDENT, "x"},
 		{token.COMMA, ","},
@@ -70,7 +75,7 @@ let result = add(five, ten);
 		{token.GT, ">"},
 		{token.INT, "5"},
 		{token.SEMICOLON, ";"},
-		{token.EOF, ""},
+		{token.IF, "if"},
 	}
 	l := New(input)
 
